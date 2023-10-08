@@ -1,23 +1,29 @@
 {
-  "name": "packageName",
+  "name": "undrive",
   "version": "0.0.0",
-  "description": "",
-  "repository": "unjs/packageName",
+  "description": "Universal Driver Layer",
+  "repository": "barbapapazes/undrive",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
   "exports": {
+    "./drivers/*": {
+      "import": "./drivers/*.mjs",
+      "require": "./drivers/*.cjs",
+      "types": "./drivers/*.d.ts"
+    },
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "drivers"
   ],
   "scripts": {
     "build": "unbuild",
@@ -42,5 +48,11 @@
     "unbuild": "^2.0.0",
     "vitest": "^0.34.6"
   },
-  "packageManager": "pnpm@8.6.12"
+  "packageManager": "pnpm@8.6.12",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.427.0",
+    "@types/fs-extra": "^11.0.2",
+    "fs-extra": "^11.1.1",
+    "get-stream": "^8.0.1"
+  }
 }
