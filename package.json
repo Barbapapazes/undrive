@@ -53,6 +53,6 @@
     "@aws-sdk/client-s3": "^3.427.0",
     "@types/fs-extra": "^11.0.2",
     "fs-extra": "^11.1.1",
-    "get-stream": "^8.0.1"
+    "get-stream": "^9.0.1"
   }
 }
